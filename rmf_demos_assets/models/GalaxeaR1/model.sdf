@@ -1,0 +1,1660 @@
+<sdf version='1.12'>
+  <model name='r1_v2_1_0'>
+    <link name='base_link'>
+      <inertial>
+        <pose>-0.0024126 -8.9625999999999999e-05 0.13736000000000001 0 0 0</pose>
+        <mass>47.630000000000003</mass>
+        <inertia>
+          <ixx>1.5780000000000001</ixx>
+          <ixy>-1.2021000000000001e-05</ixy>
+          <ixz>0.053642000000000002</ixz>
+          <iyy>1.462</iyy>
+          <iyz>7.2969999999999998e-06</iyz>
+          <izz>2.8317999999999999</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='steer_motor_joint1' type='revolute'>
+      <pose relative_to='base_link'>0.21515999999999999 0.28000000000000003 0.12375 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>steer_motor_link1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>44</effort>
+          <velocity>3.1415999999999999</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='steer_motor_link1'>
+      <pose relative_to='steer_motor_joint1'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.00098920999999999992 -0.034312000000000002 -0.034597000000000003 0 0 0</pose>
+        <mass>1.2</mass>
+        <inertia>
+          <ixx>8.8522000000000004e-05</ixx>
+          <ixy>-3.7755000000000001e-06</ixy>
+          <ixz>4.5455999999999997e-09</ixz>
+          <iyy>7.5352000000000006e-05</iyy>
+          <iyz>-7.0315999999999995e-07</iyz>
+          <izz>0.00010165</izz>
+        </inertia>
+      </inertial>
+      <collision name='steer_motor_link1_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/steer_motor_link1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='steer_motor_link1_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/steer_motor_link1.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <ambient>0.5 0.5 0.5 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel_motor_joint1' type='revolute'>
+      <pose relative_to='steer_motor_link1'>0 0 -0.095250000000000001 0 0 0</pose>
+      <parent>steer_motor_link1</parent>
+      <child>wheel_motor_link1</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel_motor_link1'>
+      <pose relative_to='wheel_motor_joint1'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-2.6184000000000002e-06 0.0015606999999999999 1.6575000000000001e-07 0 0 0</pose>
+        <mass>5</mass>
+        <inertia>
+          <ixx>0.00089952000000000001</ixx>
+          <ixy>6.9160000000000005e-08</ixy>
+          <ixz>7.5500999999999996e-10</ixz>
+          <iyy>0.0015854</iyy>
+          <iyz>7.6011e-12</iyz>
+          <izz>0.00089957999999999998</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel_motor_link1_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/wheel_motor_link1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='wheel_motor_link1_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/wheel_motor_link1.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.745100021 0.833337545 0.857837498 1</diffuse>
+          <ambient>0.745100021 0.833337545 0.857837498 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='steer_motor_joint2' type='revolute'>
+      <pose relative_to='base_link'>0.21515999999999999 -0.28000000000000003 0.12375 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>steer_motor_link2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>44</effort>
+          <velocity>3.1415999999999999</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='steer_motor_link2'>
+      <pose relative_to='steer_motor_joint2'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.00098879000000000002 0.034317 -0.034601 0 0 0</pose>
+        <mass>1.2</mass>
+        <inertia>
+          <ixx>8.8509000000000002e-05</ixx>
+          <ixy>3.7728000000000001e-06</ixy>
+          <ixz>4.5839999999999999e-09</ixz>
+          <iyy>7.5337000000000001e-05</iyy>
+          <iyz>7.0144999999999997e-07</iyz>
+          <izz>0.00010162000000000001</izz>
+        </inertia>
+      </inertial>
+      <collision name='steer_motor_link2_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/steer_motor_link2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='steer_motor_link2_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/steer_motor_link2.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <ambient>0.5 0.5 0.5 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel_motor_joint2' type='revolute'>
+      <pose relative_to='steer_motor_link2'>0 0 -0.095250000000000001 0 0 0</pose>
+      <parent>steer_motor_link2</parent>
+      <child>wheel_motor_link2</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel_motor_link2'>
+      <pose relative_to='wheel_motor_joint2'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>2.6199000000000001e-06 -0.0015606999999999999 1.6572999999999999e-07 0 0 0</pose>
+        <mass>5</mass>
+        <inertia>
+          <ixx>0.00089952000000000001</ixx>
+          <ixy>6.9162999999999995e-08</ixy>
+          <ixz>-7.5368000000000003e-10</ixz>
+          <iyy>0.0015854</iyy>
+          <iyz>-7.6749000000000007e-12</iyz>
+          <izz>0.00089957999999999998</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel_motor_link2_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/wheel_motor_link2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='wheel_motor_link2_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/wheel_motor_link2.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.745100021 0.833337545 0.857837498 1</diffuse>
+          <ambient>0.745100021 0.833337545 0.857837498 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='steer_motor_joint3' type='revolute'>
+      <pose relative_to='base_link'>-0.28083999999999998 0 0.12375 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>steer_motor_link3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>44</effort>
+          <velocity>3.1415999999999999</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='steer_motor_link3'>
+      <pose relative_to='steer_motor_joint3'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.00098879000000000002 -0.034317 -0.034601 0 0 0</pose>
+        <mass>1.2</mass>
+        <inertia>
+          <ixx>8.8509000000000002e-05</ixx>
+          <ixy>3.7728000000000001e-06</ixy>
+          <ixz>-4.5839999999999999e-09</ixz>
+          <iyy>7.5337000000000001e-05</iyy>
+          <iyz>-7.0144999999999997e-07</iyz>
+          <izz>0.00010162000000000001</izz>
+        </inertia>
+      </inertial>
+      <collision name='steer_motor_link3_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/steer_motor_link3.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='steer_motor_link3_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/steer_motor_link3.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <ambient>0.5 0.5 0.5 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel_motor_joint3' type='revolute'>
+      <pose relative_to='steer_motor_link3'>0 0 -0.095250000000000001 0 0 0</pose>
+      <parent>steer_motor_link3</parent>
+      <child>wheel_motor_link3</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel_motor_link3'>
+      <pose relative_to='wheel_motor_joint3'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>2.6203000000000001e-06 0.0015606999999999999 -1.6563999999999999e-07 0 0 0</pose>
+        <mass>5</mass>
+        <inertia>
+          <ixx>0.00089952000000000001</ixx>
+          <ixy>-6.9071999999999998e-08</ixy>
+          <ixz>7.5035999999999998e-10</ixz>
+          <iyy>0.0015854</iyy>
+          <iyz>-7.8449999999999998e-12</iyz>
+          <izz>0.00089957999999999998</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel_motor_link3_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/wheel_motor_link3.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='wheel_motor_link3_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/wheel_motor_link3.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.745100021 0.833337545 0.857837498 1</diffuse>
+          <ambient>0.745100021 0.833337545 0.857837498 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='torso_joint1' type='revolute'>
+      <pose relative_to='base_link'>-0.032844999999999999 0 0.30099999999999999 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>torso_link1</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.1345000000000001</lower>
+          <upper>1.8326</upper>
+          <effort>100</effort>
+          <velocity>2.5</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='torso_link1'>
+      <pose relative_to='torso_joint1'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.00065636000000000004 0.0032247 0.23141999999999999 0 0 0</pose>
+        <mass>5.7199999999999998</mass>
+        <inertia>
+          <ixx>0.10931</ixx>
+          <ixy>7.7893000000000001e-06</ixy>
+          <ixz>-0.00017473</ixz>
+          <iyy>0.10736</iyy>
+          <iyz>0.00013763</iyz>
+          <izz>0.0081221999999999996</izz>
+        </inertia>
+      </inertial>
+      <collision name='torso_link1_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/torso_link1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='torso_link1_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/torso_link1.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.465687513 0.465687513 0.465687513 1</diffuse>
+          <ambient>0.465687513 0.465687513 0.465687513 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='torso_joint2' type='revolute'>
+      <pose relative_to='torso_link1'>0 0 0.40000000000000002 0 0 0</pose>
+      <parent>torso_link1</parent>
+      <child>torso_link2</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-2.7925</lower>
+          <upper>2.5306999999999999</upper>
+          <effort>100</effort>
+          <velocity>2.5</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='torso_link2'>
+      <pose relative_to='torso_joint2'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.0052516999999999998 0.014411999999999999 0.15711 0 0 0</pose>
+        <mass>3.5</mass>
+        <inertia>
+          <ixx>0.026081</ixx>
+          <ixy>-3.3406000000000001e-07</ixy>
+          <ixz>0.00024541</ixz>
+          <iyy>0.027574000000000001</iyy>
+          <iyz>3.8473999999999999e-07</iyz>
+          <izz>0.0018515000000000001</izz>
+        </inertia>
+      </inertial>
+      <collision name='torso_link2_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/torso_link2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='torso_link2_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/torso_link2.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.465687513 0.465687513 0.465687513 1</diffuse>
+          <ambient>0.465687513 0.465687513 0.465687513 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='torso_joint3' type='revolute'>
+      <pose relative_to='torso_link2'>0 0 0.29999999999999999 0 0 0</pose>
+      <parent>torso_link2</parent>
+      <child>torso_link3</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-1.8326</lower>
+          <upper>1.5708</upper>
+          <effort>100</effort>
+          <velocity>2.5</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='torso_link3'>
+      <pose relative_to='torso_joint3'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-7.5510000000000002e-06 -0.0092666999999999992 0.0042123999999999998 0 0 0</pose>
+        <mass>3.3999999999999999</mass>
+        <inertia>
+          <ixx>0.0014058</ixx>
+          <ixy>3.5487e-07</ixy>
+          <ixz>9.0954999999999996e-08</ixz>
+          <iyy>0.0021992000000000001</iyy>
+          <iyz>1.6337999999999998e-05</iyz>
+          <izz>0.0013332000000000001</izz>
+        </inertia>
+      </inertial>
+      <collision name='torso_link3_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/torso_link3.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='torso_link3_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/torso_link3.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.465687513 0.465687513 0.465687513 1</diffuse>
+          <ambient>0.465687513 0.465687513 0.465687513 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='torso_joint4' type='revolute'>
+      <pose relative_to='torso_link3'>0 0 0.09962 0 0 0</pose>
+      <parent>torso_link3</parent>
+      <child>torso_link4</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.0543</lower>
+          <upper>3.0543</upper>
+          <effort>100</effort>
+          <velocity>2.5</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='torso_link4'>
+      <pose relative_to='torso_joint4'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.00062130119036047022 3.776433012552143e-07 0.1672906579792697 0 0 0</pose>
+        <mass>12.766</mass>
+        <inertia>
+          <ixx>0.50796318556360331</ixx>
+          <ixy>3.4350125729094611e-07</ixy>
+          <ixz>0.0031902772148423471</ixz>
+          <iyy>0.44480078250078581</iyy>
+          <iyz>-1.652581433491126e-06</iyz>
+          <izz>0.080074815067873187</izz>
+        </inertia>
+      </inertial>
+      <collision name='torso_link4_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/torso_link4.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='torso_link4_fixed_joint_lump__left_arm_base_link_collision_1'>
+        <pose>0.00077694000000000005 0.097234000000000001 0.30285000000000001 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/left_arm_base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='torso_link4_fixed_joint_lump__right_arm_base_link_collision_2'>
+        <pose>0.00077778000000000005 -0.097235000000000002 0.30285000000000001 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/right_arm_base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='torso_link4_fixed_joint_lump__zed_link_collision_3'>
+        <pose>0.065512000000000001 0.060005000000000003 0.47598000000000001 -1.9198999999999999 0 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/zed_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='torso_link4_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/torso_link4.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='torso_link4_fixed_joint_lump__left_arm_base_link_visual_1'>
+        <pose>0.00077694000000000005 0.097234000000000001 0.30285000000000001 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/left_arm_base_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.990199983 1 1 1</diffuse>
+          <ambient>0.990199983 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='torso_link4_fixed_joint_lump__right_arm_base_link_visual_2'>
+        <pose>0.00077778000000000005 -0.097235000000000002 0.30285000000000001 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/right_arm_base_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.990199983 1 1 1</diffuse>
+          <ambient>0.990199983 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='torso_link4_fixed_joint_lump__zed_link_visual_3'>
+        <pose>0.065512000000000001 0.060005000000000003 0.47598000000000001 -1.9198999999999999 0 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/zed_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='left_arm_joint1' type='revolute'>
+      <pose relative_to='torso_link4'>-0.00033796 0.14183399999999999 0.30285000000000001 0 0 0</pose>
+      <parent>torso_link4</parent>
+      <child>left_arm_link1</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-2.8797999999999999</lower>
+          <upper>2.8797999999999999</upper>
+          <effort>40</effort>
+          <velocity>20.943999999999999</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='left_arm_link1'>
+      <pose relative_to='left_arm_joint1'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>1.5e-05 0.10525900000000001 -0.001954 0 0 0</pose>
+        <mass>1.1639999999999999</mass>
+        <inertia>
+          <ixx>0.0011249999999999999</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0010839999999999999</iyy>
+          <iyz>-2.3e-05</iyz>
+          <izz>0.001158</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_arm_link1_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/left_arm_link1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='left_arm_link1_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/left_arm_link1.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.990199983 1 1 1</diffuse>
+          <ambient>0.990199983 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='left_arm_joint2' type='revolute'>
+      <pose relative_to='left_arm_link1'>0 0.1061 0 0 0 0</pose>
+      <parent>left_arm_link1</parent>
+      <child>left_arm_link2</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>3.2288999999999999</upper>
+          <effort>40</effort>
+          <velocity>20.943999999999999</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='left_arm_link2'>
+      <pose relative_to='left_arm_joint2'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.23622000000000001 0.016351999999999998 -0.00013275 0 0 0</pose>
+        <mass>1.3</mass>
+        <inertia>
+          <ixx>0.00060638</ixx>
+          <ixy>0.00041816999999999999</ixy>
+          <ixz>0.00014956</ixz>
+          <iyy>0.0075935999999999998</iyy>
+          <iyz>-8.0916000000000006e-06</iyz>
+          <izz>0.0075712000000000002</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_arm_link2_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/left_arm_link2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='left_arm_link2_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/left_arm_link2.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.990199983 1 1 1</diffuse>
+          <ambient>0.990199983 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='left_arm_joint3' type='revolute'>
+      <pose relative_to='left_arm_link2'>-0.34927999999999998 0.019997999999999998 0 0 0 0</pose>
+      <parent>left_arm_link2</parent>
+      <child>left_arm_link3</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-3.3161</lower>
+          <upper>0</upper>
+          <effort>27</effort>
+          <velocity>7.5397999999999996</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='left_arm_link3'>
+      <pose relative_to='left_arm_joint3'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.045114000000000001 0.054615999999999998 -0.00045593000000000001 0 0 0</pose>
+        <mass>0.81799999999999995</mass>
+        <inertia>
+          <ixx>0.00060106999999999999</ixx>
+          <ixy>-0.00022467</ixy>
+          <ixz>-7.1194e-06</ixz>
+          <iyy>0.0013959</iyy>
+          <iyz>-9.7503000000000005e-06</iyz>
+          <izz>0.0015027</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_arm_link3_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/left_arm_link3.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='left_arm_link3_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/left_arm_link3.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.990199983 1 1 1</diffuse>
+          <ambient>0.990199983 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='left_arm_joint4' type='revolute'>
+      <pose relative_to='left_arm_link3'>0.027349999999999999 0.069766999999999996 0 0 0 0</pose>
+      <parent>left_arm_link3</parent>
+      <child>left_arm_link4</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.8797999999999999</lower>
+          <upper>2.8797999999999999</upper>
+          <effort>7</effort>
+          <velocity>25.132999999999999</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='left_arm_link4'>
+      <pose relative_to='left_arm_joint4'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.24285000000000001 0.0023784000000000001 1.279e-06 0 0 0</pose>
+        <mass>0.69799999999999995</mass>
+        <inertia>
+          <ixx>8.4499999999999994e-05</ixx>
+          <ixy>-8.2627000000000005e-07</ixy>
+          <ixz>-2.2606999999999999e-09</ixz>
+          <iyy>0.00010174</iyy>
+          <iyz>5.3612000000000001e-09</iyz>
+          <izz>9.7044000000000001e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_arm_link4_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/left_arm_link4.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='left_arm_link4_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/left_arm_link4.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='left_arm_joint5' type='revolute'>
+      <pose relative_to='left_arm_link4'>0.24629999999999999 -0.00049894000000000002 0 0 0 0</pose>
+      <parent>left_arm_link4</parent>
+      <child>left_arm_link5</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.6580999999999999</lower>
+          <upper>1.6580999999999999</upper>
+          <effort>7</effort>
+          <velocity>25.132999999999999</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='left_arm_link5'>
+      <pose relative_to='left_arm_joint5'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.054309000000000003 0.0041811000000000001 4.0698999999999998e-06 0 0 0</pose>
+        <mass>0.41699999999999998</mass>
+        <inertia>
+          <ixx>8.3999000000000007e-05</ixx>
+          <ixy>1.6234000000000001e-05</ixy>
+          <ixz>7.4126999999999999e-08</ixz>
+          <iyy>9.8498000000000005e-05</iyy>
+          <iyz>-1.3811e-08</iyz>
+          <izz>0.00011333</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_arm_link5_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/left_arm_link5.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='left_arm_link5_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/left_arm_link5.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='left_arm_joint6' type='revolute'>
+      <pose relative_to='left_arm_link5'>0.058249000000000002 0.00050025000000000004 0 0 0 0</pose>
+      <parent>left_arm_link5</parent>
+      <child>left_arm_link6</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.8797999999999999</lower>
+          <upper>2.8797999999999999</upper>
+          <effort>7</effort>
+          <velocity>25.132999999999999</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='left_arm_link6'>
+      <pose relative_to='left_arm_joint6'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.072420573073142105 -0.0043055674667394749 0.01120702221318182 0 0 0</pose>
+        <mass>0.81600000000000006</mass>
+        <inertia>
+          <ixx>0.00063646385008100275</ixx>
+          <ixy>2.8342204535702439e-05</ixy>
+          <ixz>-7.3804429218981551e-05</ixz>
+          <iyy>0.0005670424625711162</iyy>
+          <iyz>0.00014696819695713369</iyz>
+          <izz>0.00032923606978184448</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_arm_link6_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/left_arm_link6.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='left_arm_link6_fixed_joint_lump__left_gripper_link_collision_1'>
+        <pose>0.10390000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/left_gripper_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='left_arm_link6_fixed_joint_lump__left_realsense_link_collision_2'>
+        <pose>0.098767999999999995 0.0021071000000000002 0.050549999999999998 -2.0071000000000003 0.007783100000000074 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/left_realsense_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='left_arm_link6_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/left_arm_link6.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='left_arm_link6_fixed_joint_lump__left_gripper_link_visual_1'>
+        <pose>0.10390000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/left_gripper_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='left_arm_link6_fixed_joint_lump__left_realsense_link_visual_2'>
+        <pose>0.098767999999999995 0.0021071000000000002 0.050549999999999998 -2.0071000000000003 0.007783100000000074 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/left_realsense_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='left_gripper_finger_joint1' type='prismatic'>
+      <pose relative_to='left_arm_link6'>0.14079 0.013453 0.00012066999999999999 0 0 0</pose>
+      <parent>left_arm_link6</parent>
+      <child>left_gripper_finger_link1</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.050000000000000003</upper>
+          <effort>100</effort>
+          <velocity>0.25</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='left_gripper_finger_link1'>
+      <pose relative_to='left_gripper_finger_joint1'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.019588999999999999 -0.015114000000000001 0.0054225000000000002 0 0 0</pose>
+        <mass>0.027</mass>
+        <inertia>
+          <ixx>2.4057000000000001e-06</ixx>
+          <ixy>3.9896999999999998e-07</ixy>
+          <ixz>5.1206000000000002e-08</ixz>
+          <iyy>5.7107999999999996e-06</iyy>
+          <iyz>6.1948000000000007e-08</iyz>
+          <izz>6.4849000000000004e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_gripper_finger_link1_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/left_gripper_finger_link1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='left_gripper_finger_link1_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/left_gripper_finger_link1.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='left_gripper_finger_joint2' type='prismatic'>
+      <pose relative_to='left_arm_link6'>0.14079 -0.013453 -0.00012053 0 0 0</pose>
+      <parent>left_arm_link6</parent>
+      <child>left_gripper_finger_link2</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.050000000000000003</upper>
+          <effort>100</effort>
+          <velocity>0.25</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='left_gripper_finger_link2'>
+      <pose relative_to='left_gripper_finger_joint2'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.01959 0.015114000000000001 -0.0054225999999999996 0 0 0</pose>
+        <mass>0.027</mass>
+        <inertia>
+          <ixx>2.4057000000000001e-06</ixx>
+          <ixy>-3.9900000000000001e-07</ixy>
+          <ixz>-5.1222e-08</ixz>
+          <iyy>5.7107999999999996e-06</iyy>
+          <iyz>6.1946000000000004e-08</iyz>
+          <izz>6.4849000000000004e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_gripper_finger_link2_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/left_gripper_finger_link2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='left_gripper_finger_link2_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/left_gripper_finger_link2.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='right_arm_joint1' type='revolute'>
+      <pose relative_to='torso_link4'>-0.00033671999999999999 -0.14183499999999999 0.30285000000000001 0 0 0</pose>
+      <parent>torso_link4</parent>
+      <child>right_arm_link1</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-2.8797999999999999</lower>
+          <upper>2.8797999999999999</upper>
+          <effort>40</effort>
+          <velocity>20.943999999999999</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='right_arm_link1'>
+      <pose relative_to='right_arm_joint1'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>1.5e-05 -0.10525900000000001 0.001954 0 0 0</pose>
+        <mass>1.1639999999999999</mass>
+        <inertia>
+          <ixx>0.0011249999999999999</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0010839999999999999</iyy>
+          <iyz>-2.3e-05</iyz>
+          <izz>0.001158</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_arm_link1_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/right_arm_link1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='right_arm_link1_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/right_arm_link1.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.990199983 1 1 1</diffuse>
+          <ambient>0.990199983 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='right_arm_joint2' type='revolute'>
+      <pose relative_to='right_arm_link1'>0 -0.1061 0 0 0 0</pose>
+      <parent>right_arm_link1</parent>
+      <child>right_arm_link2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>3.2288999999999999</upper>
+          <effort>40</effort>
+          <velocity>20.943999999999999</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='right_arm_link2'>
+      <pose relative_to='right_arm_joint2'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.23622000000000001 -0.016354 0.00013182999999999999 0 0 0</pose>
+        <mass>1.3</mass>
+        <inertia>
+          <ixx>0.00060639000000000005</ixx>
+          <ixy>-0.00041823000000000001</ixy>
+          <ixz>-0.00014957999999999999</ixz>
+          <iyy>0.0075935999999999998</iyy>
+          <iyz>-8.0947000000000006e-06</iyz>
+          <izz>0.0075712000000000002</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_arm_link2_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/right_arm_link2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='right_arm_link2_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/right_arm_link2.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.990199983 1 1 1</diffuse>
+          <ambient>0.990199983 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='right_arm_joint3' type='revolute'>
+      <pose relative_to='right_arm_link2'>-0.34927999999999998 -0.020001999999999999 0 0 0 0</pose>
+      <parent>right_arm_link2</parent>
+      <child>right_arm_link3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.3161</lower>
+          <upper>0</upper>
+          <effort>27</effort>
+          <velocity>7.5397999999999996</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='right_arm_link3'>
+      <pose relative_to='right_arm_joint3'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.045115000000000002 -0.054615999999999998 0.00045613000000000001 0 0 0</pose>
+        <mass>0.81799999999999995</mass>
+        <inertia>
+          <ixx>0.00060106999999999999</ixx>
+          <ixy>0.00022466000000000001</ixy>
+          <ixz>7.1148e-06</ixz>
+          <iyy>0.0013959</iyy>
+          <iyz>-9.7491999999999998e-06</iyz>
+          <izz>0.0015027</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_arm_link3_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/right_arm_link3.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='right_arm_link3_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/right_arm_link3.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.990199983 1 1 1</diffuse>
+          <ambient>0.990199983 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='right_arm_joint4' type='revolute'>
+      <pose relative_to='right_arm_link3'>0.027349999999999999 -0.069766999999999996 0 0 0 0</pose>
+      <parent>right_arm_link3</parent>
+      <child>right_arm_link4</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.8797999999999999</lower>
+          <upper>2.8797999999999999</upper>
+          <effort>7</effort>
+          <velocity>25.132999999999999</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='right_arm_link4'>
+      <pose relative_to='right_arm_joint4'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.24285000000000001 -0.0023763 -3.4602999999999998e-07 0 0 0</pose>
+        <mass>0.69399999999999995</mass>
+        <inertia>
+          <ixx>8.4499999999999994e-05</ixx>
+          <ixy>8.2612000000000004e-07</ixy>
+          <ixz>2.2123999999999999e-09</ixz>
+          <iyy>0.00010174</iyy>
+          <iyz>5.3644000000000002e-09</iyz>
+          <izz>9.7044000000000001e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_arm_link4_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/right_arm_link4.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='right_arm_link4_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/right_arm_link4.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='right_arm_joint5' type='revolute'>
+      <pose relative_to='right_arm_link4'>0.24629999999999999 0.00050106 0 0 0 0</pose>
+      <parent>right_arm_link4</parent>
+      <child>right_arm_link5</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-1.6580999999999999</lower>
+          <upper>1.6580999999999999</upper>
+          <effort>7</effort>
+          <velocity>25.132999999999999</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='right_arm_link5'>
+      <pose relative_to='right_arm_joint5'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.054309000000000003 -0.0041806999999999999 -3.8612999999999998e-06 0 0 0</pose>
+        <mass>0.41699999999999998</mass>
+        <inertia>
+          <ixx>8.3999999999999995e-05</ixx>
+          <ixy>-1.6234000000000001e-05</ixy>
+          <ixz>-7.4238999999999994e-08</ixz>
+          <iyy>9.8498000000000005e-05</iyy>
+          <iyz>-1.3874000000000001e-08</iyz>
+          <izz>0.00011333</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_arm_link5_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/right_arm_link5.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='right_arm_link5_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/right_arm_link5.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='right_arm_joint6' type='revolute'>
+      <pose relative_to='right_arm_link5'>0.058249000000000002 -0.00049974999999999998 0 0 0 0</pose>
+      <parent>right_arm_link5</parent>
+      <child>right_arm_link6</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.8797999999999999</lower>
+          <upper>2.8797999999999999</upper>
+          <effort>7</effort>
+          <velocity>25.132999999999999</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='right_arm_link6'>
+      <pose relative_to='right_arm_joint6'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.072419108438399243 -0.0043055674658629643 0.011207022212911999 0 0 0</pose>
+        <mass>0.81600000000000006</mass>
+        <inertia>
+          <ixx>0.0006364639696430825</ixx>
+          <ixy>2.8326270702060719e-05</ixy>
+          <ixz>-7.3762953126080451e-05</ixz>
+          <iyy>0.00056702580364595499</iyy>
+          <iyz>0.0001469681975095576</iyz>
+          <izz>0.00032921911319664949</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_arm_link6_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/right_arm_link6.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='right_arm_link6_fixed_joint_lump__right_gripper_link_collision_1'>
+        <pose>0.10390000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/right_gripper_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='right_arm_link6_fixed_joint_lump__right_realsense_link_collision_2'>
+        <pose>0.098762000000000003 0.0021071000000000002 0.050549999999999998 -2.0071000000000003 0.007783100000000074 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/right_realsense_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='right_arm_link6_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/right_arm_link6.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='right_arm_link6_fixed_joint_lump__right_gripper_link_visual_1'>
+        <pose>0.10390000000000001 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/right_gripper_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='right_arm_link6_fixed_joint_lump__right_realsense_link_visual_2'>
+        <pose>0.098762000000000003 0.0021071000000000002 0.050549999999999998 -2.0071000000000003 0.007783100000000074 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/right_realsense_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='right_gripper_finger_joint1' type='prismatic'>
+      <pose relative_to='right_arm_link6'>0.14079 -0.013453 -0.00012053 0 0 0</pose>
+      <parent>right_arm_link6</parent>
+      <child>right_gripper_finger_link1</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.050000000000000003</upper>
+          <effort>100</effort>
+          <velocity>0.25</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='right_gripper_finger_link1'>
+      <pose relative_to='right_gripper_finger_joint1'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.0195895587205407 0.0151136130965041 -0.0054225581812854503 0 0 0</pose>
+        <mass>0.027</mass>
+        <inertia>
+          <ixx>2.4056906376243301e-06</ixx>
+          <ixy>-3.9900207337207099e-07</ixy>
+          <ixz>-5.12217975840564e-08</ixz>
+          <iyy>5.7108213456237401e-06</iyy>
+          <iyz>6.1945718385154497e-08</iyz>
+          <izz>6.4848556091919001e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_gripper_finger_link1_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/right_gripper_finger_link1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='right_gripper_finger_link1_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/right_gripper_finger_link1.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='right_gripper_finger_joint2' type='prismatic'>
+      <pose relative_to='right_arm_link6'>0.14079 0.013453 0.00012066999999999999 0 0 0</pose>
+      <parent>right_arm_link6</parent>
+      <child>right_gripper_finger_link2</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.050000000000000003</upper>
+          <effort>100</effort>
+          <velocity>0.25</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='right_gripper_finger_link2'>
+      <pose relative_to='right_gripper_finger_joint2'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.019589448977496 -0.0151137821219537 0.0054224830431559602 0 0 0</pose>
+        <mass>0.027</mass>
+        <inertia>
+          <ixx>2.4056833923457398e-06</ixx>
+          <ixy>3.9897334037856801e-07</ixy>
+          <ixz>5.1205597823768601e-08</ixz>
+          <iyy>5.7108280357444299e-06</iyy>
+          <iyz>6.1947681278401903e-08</iyz>
+          <izz>6.48485579679143e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_gripper_finger_link2_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/right_gripper_finger_link2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='right_gripper_finger_link2_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://GalaxeaR1/meshes/right_gripper_finger_link2.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <frame name='left_arm_base_joint' attached_to='torso_link4'>
+      <pose>0.00077694000000000005 0.097234000000000001 0.30285000000000001 0 0 0</pose>
+    </frame>
+    <frame name='left_arm_base_link' attached_to='left_arm_base_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='left_gripper_joint' attached_to='left_arm_link6'>
+      <pose>0.10390000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='left_gripper_link' attached_to='left_gripper_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='left_realsense_joint' attached_to='left_arm_link6'>
+      <pose>0.098767999999999995 0.0021071000000000002 0.050549999999999998 -2.0071000000000003 0.007783099999999963 -1.5708</pose>
+    </frame>
+    <frame name='left_realsense_link' attached_to='left_realsense_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='right_arm_base_joint' attached_to='torso_link4'>
+      <pose>0.00077778000000000005 -0.097235000000000002 0.30285000000000001 0 0 0</pose>
+    </frame>
+    <frame name='right_arm_base_link' attached_to='right_arm_base_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='right_gripper_joint' attached_to='right_arm_link6'>
+      <pose>0.10390000000000001 0 0 0 0 0</pose>
+    </frame>
+    <frame name='right_gripper_link' attached_to='right_gripper_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='right_realsense_joint' attached_to='right_arm_link6'>
+      <pose>0.098762000000000003 0.0021071000000000002 0.050549999999999998 -2.0071000000000003 0.007783099999999963 -1.5708</pose>
+    </frame>
+    <frame name='right_realsense_link' attached_to='right_realsense_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='zed_joint' attached_to='torso_link4'>
+      <pose>0.065512000000000001 0.060005000000000003 0.47598000000000001 -1.9198999999999999 0 -1.5708</pose>
+    </frame>
+    <frame name='zed_link' attached_to='zed_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+  </model>
+</sdf>
