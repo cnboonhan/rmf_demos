@@ -32,3 +32,8 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/mo
 
 ros2 topic pub /adapter_door_requests rmf_door_msgs/msg/DoorRequest "{door_name: 'L1_door1', requested_mode: {value: 0}, requester_id: 'manual', request_time: {sec: 0}}" --once 
 ```
+
+## Camera
+```
+ros2 run ros_gz_bridge parameter_bridge /model/r1/chest_camera@sensor_msgs/msg/Image[gz.msgs.Image
+```
